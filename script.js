@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", (event) => {
         event.preventDefault(); // Prevent form submission
+        validateForm(); // Call the validation function
+    });
 
+    function validateForm() {
         // Retrieve user inputs and trim whitespace
         const username = document.getElementById("username").value.trim();
         const email = document.getElementById("email").value.trim();
@@ -40,5 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
             feedbackDiv.innerHTML = messages.join("<br>"); // Join error messages
             feedbackDiv.style.color = "#dc3545"; // Red color for errors
         }
-    });
+    }
 });
+
